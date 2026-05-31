@@ -1,0 +1,43 @@
+steps:
+  # Step 1: Build the container image using the multi-stage Dockerfile
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/portfolio-app:$COMMIT_SHA'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/portfolio-app:latest'
+      - '.'
+
+  # Step 2: Push the container image to Google Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/portfolio-app:$COMMIT_SHA'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/portfolio-app:latest'
+
+  # Step 3: Deploy container to Google Cloud Run for serverless scaling
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'portfolio-app'
+      - '--image'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/portfolio-app:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+
+images:
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/portfolio-app:$COMMIT_SHA'
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/portfolio-app:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

@@ -1,0 +1,62 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.report
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript/JavaScript build and cache
+dist/
+dist-ssr/
+.tsc-cache/
+.tsbuildinfo
+out/
+
+# Coverage directory
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# dotenv environment variable files (DO NOT COMMIT SECRETS)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.*
+!*.env.example
+
+# IDEs and editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Antigravity/Gemini system files
+.antigravitycli/
+.gemini/
+.agent_artifacts/
+
+# Service Account Key Files
+dev-station.json
+*.json.key
