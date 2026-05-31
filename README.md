@@ -43,10 +43,3 @@ Open [http://localhost:5173/](http://localhost:5173/) in your browser to view th
 * `npm run test:run` — Runs the test suite once.
 
 ---
-
-## 📝 Testing Strategy
-
-I use **Antigravity Customizations** to enforce our testing conventions and patterns:
-
-- **React Testing Skill**: I maintain a dedicated `react-testing` skill located at `.agents/skills/react-testing/SKILL.md`. The agent automatically reads and follows these conventions (Vitest, React Testing Library, User Event) when writing tests.
-- **Component Rules**: The `.agents/rules/react-components.md` rule automatically triggers whenever the agent works on React components, ensuring they are properly tested according to our standards.
