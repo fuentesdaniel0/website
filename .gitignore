@@ -56,6 +56,7 @@ coverage/
 .antigravitycli/
 .gemini/
 .agent_artifacts/
+.agents/
 
 # Service Account Key Files
 dev-station.json
