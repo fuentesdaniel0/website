@@ -1,31 +1,25 @@
-# ==========================================
-# STAGE 1: Build static assets
-# ==========================================
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS base
 
+FROM base AS deps
 WORKDIR /app
-
-# Copy full application code
-COPY . .
-
-# Install dependencies cleanly
+COPY package*.json ./
 RUN npm ci
 
-# Run type checks and build production assets
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
 RUN npm run build
 
-# ==========================================
-# STAGE 2: Serve using Nginx
-# ==========================================
-FROM nginx:alpine
+FROM base AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=8080
+ENV HOSTNAME=0.0.0.0
 
-# Copy built assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
 
-# Copy custom Nginx configuration for Cloud Run compatibility (Port 8080 & SPA routing)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 8080 for Google Cloud Run
 EXPOSE 8080
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.js"]

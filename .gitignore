@@ -21,6 +21,10 @@ dist-ssr/
 .tsbuildinfo
 out/
 
+# Next.js
+.next/
+next-env.d.ts
+
 # Coverage directory
 coverage/
 *.lcov
