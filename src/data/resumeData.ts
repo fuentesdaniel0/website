@@ -149,10 +149,10 @@ export const resumeData: ResumeData = {
   ],
   projects: [
     {
-      title: "Resume Analytics & Portfolio Monorepo",
-      technologies: ["React 19", "TypeScript", "Vite", "Vitest", "NPM Workspaces", "Cloud Run", "GitHub Actions"],
+      title: "Resume Analytics & Portfolio",
+      technologies: ["React 19", "Next.js 15", "TypeScript", "Vitest", "Cloud Run", "GitHub Actions"],
       bulletPoints: [
-        "Architected a decoupled, workspace-based monorepo separating public portfolio views from private analytics dashboards, utilizing NPM workspaces and Vite for rapid compilation.",
+        "Architected a server-rendered portfolio and analytics dashboard utilizing the Next.js App Router for optimized performance and SEO.",
         "Engineered a custom NLP heuristics analyzer in TypeScript to parse and evaluate resume linguistic scannability, XYZ metric density, and ATS keyword matching.",
         "Implemented a secure cryptographic authentication gate using the Web Crypto API (SHA-256) and deployed the containerized application to Cloud Run via automated GitHub Actions pipelines.",
         "Established robust continuous integration (CI) workflows via GitHub Actions, integrating ESLint and Vitest to enforce code quality and automate unit testing."
