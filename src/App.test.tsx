@@ -1,33 +1,26 @@
 // @vitest-environment jsdom
 import '@testing-library/jest-dom/vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import App from './App';
 
 describe('Portfolio App', () => {
-  it('renders the main contact info correctly', () => {
+  it('renders name and title', () => {
     render(<App />);
-    expect(screen.getAllByText('Daniel A. Fuentes')[0]).toBeInTheDocument();
-    expect(screen.getAllByText('Full-Stack & Cloud Engineer')[0]).toBeInTheDocument();
-    expect(screen.getByText('daniel.fuentes.sh@gmail.com')).toBeInTheDocument();
+    expect(screen.getByText('Daniel A. Fuentes')).toBeInTheDocument();
+    expect(screen.getByText('Full-Stack & Cloud Engineer')).toBeInTheDocument();
   });
 
-  it('renders experience section correctly', () => {
+  it('renders LinkedIn and GitHub links', () => {
     render(<App />);
-    expect(screen.getAllByText('Customer Engineer')[0]).toBeInTheDocument();
-    expect(screen.getAllByText('Solutions Engineer')[0]).toBeInTheDocument();
+    const linkedin = screen.getByRole('link', { name: /linkedin/i });
+    const github = screen.getByRole('link', { name: /github/i });
+    expect(linkedin).toHaveAttribute('href', 'https://linkedin.com/in/daniel-a-fuentes/');
+    expect(github).toHaveAttribute('href', 'https://github.com/fuentesdaniel0');
   });
 
-  it('highlights skills on hover', () => {
+  it('renders coming soon message', () => {
     render(<App />);
-    
-    // Using test-id to find a specific skill pill
-    const reactPill = screen.getAllByText('React')[0];
-    fireEvent.mouseEnter(reactPill);
-    
-    // Just verifying that the handler exists and doesn't crash
-    expect(reactPill).toBeInTheDocument();
-    
-    fireEvent.mouseLeave(reactPill);
+    expect(screen.getByText('Portfolio coming soon.')).toBeInTheDocument();
   });
 });
