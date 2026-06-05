@@ -69,19 +69,19 @@ export const resumeData: ResumeData = {
   skills: [
     {
       category: "Languages",
-      items: ["Python", "JavaScript", "TypeScript", "C++", "SQL", "HTML/CSS"]
+      items: ["TypeScript / JS", "Python", "C++", "SQL"]
     },
     {
       category: "Cloud & Infrastructure",
-      items: ["Google Cloud (GCP)", "Docker", "Kubernetes (GKE)", "Terraform", "Git", "CI/CD", "Linux", "Slurm"]
+      items: ["GCP", "Docker", "Kubernetes", "Terraform", "CI/CD (GitHub Actions)", "Slurm"]
     },
     {
       category: "Web Frameworks",
-      items: ["React", "Node.js", "Express.js", "Angular", "Flask", "Django"]
+      items: ["React", "Next.js", "Node.js / Express", "Angular", "Django", "Flask"]
     },
     {
       category: "Data & AI",
-      items: ["Vertex AI", "BigQuery", "Document AI", "Dataflow", "RAG Pipelines"]
+      items: ["Vertex AI", "BigQuery", "Dataflow", "Document AI", "RAG / LLM Pipelines"]
     }
   ],
   experience: [
