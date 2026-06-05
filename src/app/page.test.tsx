@@ -17,6 +17,6 @@ describe('Home Page', () => {
 
   it('renders coming soon message', () => {
     render(<Home />)
-    expect(screen.getByText('Portfolio coming soon.')).toBeInTheDocument()
+    expect(screen.getByText('Building v2.0')).toBeInTheDocument()
   })
 })
