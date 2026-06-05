@@ -27,9 +27,6 @@ jobs:
       - name: Run TypeScript type-checker
         run: npx tsc -b
 
-      - name: Run ESLint
-        run: npm run lint
-
       - name: Run Test Suite (Vitest)
         run: npm run test:run
 

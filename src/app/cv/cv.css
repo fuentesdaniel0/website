@@ -1,0 +1,113 @@
+.cv-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  color: #333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.cv-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 20px;
+}
+
+.cv-header h1 {
+  margin: 0 0 5px 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.cv-header h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #666;
+}
+
+.cv-contact-info {
+  font-size: 0.9rem;
+}
+
+.cv-contact-info a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.cv-contact-info a:hover {
+  text-decoration: underline;
+}
+
+.cv-section {
+  margin-bottom: 30px;
+}
+
+.cv-section h3 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cv-skill-group {
+  margin-bottom: 5px;
+}
+
+.cv-job, .cv-project, .cv-education {
+  margin-bottom: 20px;
+}
+
+.cv-job-header, .cv-project-header, .cv-edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.cv-role-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cv-role-dates, .cv-edu-dates {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.cv-role-bullets, .cv-project-bullets {
+  margin-top: 0;
+  padding-left: 20px;
+}
+
+.cv-role-bullets li, .cv-project-bullets li {
+  margin-bottom: 5px;
+}
+
+.cv-project-tech {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 8px 0;
+}
+
+/* Print styles for saving to PDF */
+@media print {
+  body {
+    background-color: #fff;
+  }
+  
+  .cv-page {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .cv-contact-info a {
+    color: #333;
+    text-decoration: none;
+  }
+}
