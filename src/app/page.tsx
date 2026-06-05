@@ -1,7 +1,7 @@
 import { resumeData } from '../data/resumeData';
 
 export default function Home() {
-  const { contact, skills } = resumeData;
+  const { contact, skills, interests } = resumeData;
 
   return (
     <>
@@ -26,10 +26,19 @@ export default function Home() {
             ))}
           </section>
 
+          {interests && interests.length > 0 && (
+            <section className="interests-container">
+              <span className="interests-label">Beyond coding</span>
+              <p className="interests-text">
+                {interests.join(" • ")}
+              </p>
+            </section>
+          )}
+
           <footer className="footer">
             <div className="soon-badge">
               <span className="dot" />
-              Building v2.0
+              Building
             </div>
             
             <div className="links">

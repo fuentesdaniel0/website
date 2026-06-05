@@ -54,6 +54,7 @@ export interface ResumeData {
   experience: Experience[];
   projects: Project[];
   education: Education;
+  interests?: string[];
 }
 
 export const resumeData: ResumeData = {
@@ -191,5 +192,6 @@ export const resumeData: ResumeData = {
       "Database Systems",
       "Computer Architecture"
     ]
-  }
+  },
+  interests: ["Bouldering", "Guitar", "Hiking", "Thriller", "Comedy"]
 };

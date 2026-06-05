@@ -145,6 +145,27 @@ body {
   box-shadow: 0 4px 12px var(--accent-glow);
 }
 
+.interests-container {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.interests-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.interests-text {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  line-height: 1.5;
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -181,16 +202,37 @@ body {
 }
 
 .icon-link {
-  color: var(--text-secondary);
-  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--accent);
+  background: rgba(0, 0, 0, 0.6);
+  /* Inset shadow creates the "hole in the wall" depth */
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.9), 
+              inset -2px -2px 6px rgba(255, 255, 255, 0.03),
+              inset 0 0 10px rgba(245, 176, 65, 0.2); /* subtle inner glow */
+  transition: all 0.3s ease;
 }
 
 .icon-link:hover {
-  color: var(--text-primary);
-  transform: scale(1.1) rotate(5deg);
+  /* Intensify the glow inside and outside the hole on hover */
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.9), 
+              inset -2px -2px 6px rgba(255, 255, 255, 0.03),
+              inset 0 0 12px rgba(245, 176, 65, 0.4),
+              0 0 8px var(--accent-glow);
+  transform: translateY(-1px);
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 4px var(--accent));
+  transition: filter 0.3s ease;
+}
+
+.icon-link:hover .icon {
+  filter: drop-shadow(0 0 6px var(--accent));
 }
