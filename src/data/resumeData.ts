@@ -58,7 +58,7 @@ export interface ResumeData {
 
 export const resumeData: ResumeData = {
   contact: {
-    name: "Daniel A. Fuentes",
+    name: "Daniel Fuentes",
     title: "Full-Stack & Cloud Engineer",
     location: "Austin, TX",
     phone: "832-302-3211",

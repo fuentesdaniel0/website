@@ -5,7 +5,7 @@ import Home from './page'
 describe('Home Page', () => {
   it('renders the name and title', () => {
     render(<Home />)
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Daniel A. Fuentes')
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Daniel Fuentes')
     expect(screen.getByText('Full-Stack & Cloud Engineer')).toBeInTheDocument()
   })
 

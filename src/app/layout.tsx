@@ -9,10 +9,10 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Daniel A. Fuentes',
+  title: 'Daniel Fuentes',
   description: 'Full-Stack & Cloud Engineer',
   openGraph: {
-    title: 'Daniel A. Fuentes',
+    title: 'Daniel Fuentes',
     description: 'Full-Stack & Cloud Engineer',
     images: ['/opengraph_preview.png'],
   },
