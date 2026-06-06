@@ -68,7 +68,15 @@ export default function CVPage() {
           {projects.map((proj, idx) => (
             <div key={idx} className="cv-project">
               <div className="cv-project-header">
-                <strong>{proj.title}</strong>
+                <strong>
+                  {proj.link ? (
+                    <a href={proj.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                      {proj.title}
+                    </a>
+                  ) : (
+                    proj.title
+                  )}
+                </strong>
               </div>
               <p className="cv-project-tech"><em>{proj.technologies.join(', ')}</em></p>
               <ul className="cv-project-bullets">

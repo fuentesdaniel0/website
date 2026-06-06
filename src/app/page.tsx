@@ -1,7 +1,7 @@
 import { resumeData } from '../data/resumeData';
 
 export default function Home() {
-  const { contact, skills, interests } = resumeData;
+  const { contact, skills, interests, projects } = resumeData;
 
   return (
     <>
@@ -25,6 +25,35 @@ export default function Home() {
               </div>
             ))}
           </section>
+
+          {projects && projects.length > 0 && (
+            <section className="projects-container" style={{ display: 'flex', gap: '8px', marginBottom: '40px', alignItems: 'flex-start' }}>
+              <span className="skill-label">Project</span>
+              <div style={{ flex: 1 }}>
+                {projects.filter(p => p.title === 'trackvenn').map((proj, idx) => (
+                  <div key={idx} className="project-card" style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', padding: '20px', borderRadius: '16px', transition: 'all 0.3s ease' }}>
+                    <h4 style={{ fontSize: '1.1rem', marginBottom: '8px', fontWeight: 500 }}>
+                      {proj.link ? (
+                        <a href={proj.link} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                          {proj.title}
+                        </a>
+                      ) : (
+                        <span style={{ color: 'var(--text-primary)' }}>{proj.title}</span>
+                      )}
+                    </h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '16px', lineHeight: '1.6' }}>
+                      {proj.bulletPoints[0]}
+                    </p>
+                    <div className="skill-pills" style={{ gap: '6px' }}>
+                      {proj.technologies.slice(0, 4).map((tech, i) => (
+                        <span key={i} className="pill" style={{ fontSize: '0.7rem', padding: '4px 10px', background: 'transparent' }}>{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {interests && interests.length > 0 && (
             <section className="interests-container">

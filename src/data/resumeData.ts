@@ -11,7 +11,7 @@ export interface ContactInfo {
 export interface ExperienceRole {
   title: string;
   startDate: string; // e.g., "Aug 2022"
-  endDate: string;   // e.g., "Present" or "Jan 2022"
+  endDate: string; // e.g., "Present" or "Jan 2022"
   startYear: number;
   startMonth: number; // 1-indexed
   endYear: number;
@@ -31,6 +31,7 @@ export interface Project {
   title: string;
   technologies: string[];
   bulletPoints: string[];
+  link?: string;
 }
 
 export interface SkillCategory {
@@ -65,25 +66,45 @@ export const resumeData: ResumeData = {
     phone: "832-302-3211",
     email: "daniel.fuentes.sh@gmail.com",
     linkedin: "linkedin.com/in/daniel-a-fuentes/",
-    github: "github.com/fuentesdaniel0" // Standard addition for developers
+    github: "github.com/fuentesdaniel0", // Standard addition for developers
   },
   skills: [
     {
       category: "Languages",
-      items: ["TypeScript / JS", "Python", "C++", "SQL"]
+      items: ["TypeScript / JS", "Python", "C++", "SQL"],
     },
     {
-      category: "Cloud & Infrastructure",
-      items: ["GCP", "Docker", "Kubernetes", "Terraform", "CI/CD (GitHub Actions)", "Slurm"]
+      category: "Cloud & Infra",
+      items: [
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "CI/CD (GitHub Actions)",
+        "Slurm",
+      ],
     },
     {
       category: "Web Frameworks",
-      items: ["React", "Next.js", "Node.js / Express", "Angular", "Django", "Flask"]
+      items: [
+        "React",
+        "Next.js",
+        "Node.js / Express",
+        "Angular",
+        "Django",
+        "Flask",
+      ],
     },
     {
       category: "Data & AI",
-      items: ["Vertex AI", "BigQuery", "Dataflow", "Document AI", "RAG / LLM Pipelines"]
-    }
+      items: [
+        "Vertex AI",
+        "BigQuery",
+        "Dataflow",
+        "Document AI",
+        "RAG / LLM Pipelines",
+      ],
+    },
   ],
   experience: [
     {
@@ -103,9 +124,20 @@ export const resumeData: ResumeData = {
             "Architected highly-available data ingestion pipelines using Cloud Run and BigQuery, processing [e.g., 5TB+ of daily unstructured data] with 99.9% uptime, enabling real-time analytics for [e.g., 10+ enterprise clients].",
             "Engineered distributed GPU computing environments by deploying automated Slurm clusters via Terraform, reducing ML model training lifecycles by [e.g., 40%] for high-performance compute (HPC) workloads.",
             "Designed and validated complex backend architectures for [e.g., 15+ high-growth startups], securely integrating disparate legacy systems with managed AI services (Document AI) to automate [e.g., 10M+ document processing pipelines].",
-            "Established production-grade MLOps infrastructure by deploying containerized ML training workloads and managed inference endpoints on Vertex AI, supporting [e.g., 500+ QPS] with sub-100ms latency."
+            "Established production-grade MLOps infrastructure by deploying containerized ML training workloads and managed inference endpoints on Vertex AI, supporting [e.g., 500+ QPS] with sub-100ms latency.",
           ],
-          skillsUsed: ["Google Cloud (GCP)", "Cloud Run", "BigQuery", "Document AI", "Slurm", "React", "Node.js", "Python", "Docker", "Vertex AI"]
+          skillsUsed: [
+            "Google Cloud (GCP)",
+            "Cloud Run",
+            "BigQuery",
+            "Document AI",
+            "Slurm",
+            "React",
+            "Node.js",
+            "Python",
+            "Docker",
+            "Vertex AI",
+          ],
         },
         {
           title: "Solutions Engineer",
@@ -119,11 +151,18 @@ export const resumeData: ResumeData = {
           bulletPoints: [
             "Engineered an evaluation pipeline and optimized a Retrieval-Augmented Generation (RAG) endpoint using Vertex Search-grounded LLMs, increasing automated response accuracy by [e.g., 25%] across [e.g., 5,000+ monthly] internal sales inquiries.",
             "Led backend development for an internal Python platform, automating the provisioning of complex GCP environments and reducing infrastructure deployment times from [e.g., days to minutes] for [e.g., 200+ engineers].",
-            "Designed fault-tolerant infrastructure deployments, including highly available Managed Instance Groups (MIGs) capable of handling [e.g., 10,000+ concurrent connections] across multi-region cloud architectures."
+            "Designed fault-tolerant infrastructure deployments, including highly available Managed Instance Groups (MIGs) capable of handling [e.g., 10,000+ concurrent connections] across multi-region cloud architectures.",
           ],
-          skillsUsed: ["Google Cloud (GCP)", "Angular", "Python", "Vertex AI", "RAG Pipelines", "Git"]
-        }
-      ]
+          skillsUsed: [
+            "Google Cloud (GCP)",
+            "Angular",
+            "Python",
+            "Vertex AI",
+            "RAG Pipelines",
+            "Git",
+          ],
+        },
+      ],
     },
     {
       company: "PROS",
@@ -141,23 +180,36 @@ export const resumeData: ResumeData = {
           bulletPoints: [
             "Developed a suite of reusable React components for an Electron application, enabling comprehensive API testing across ~40 dynamic pricing endpoints.",
             "Improved application performance by implementing frontend optimizations that significantly reduced component rendering times and increased responsiveness.",
-            "Introduced unit and integration tests using Jest and React Testing Library, improving overall code reliability."
+            "Introduced unit and integration tests using Jest and React Testing Library, improving overall code reliability.",
           ],
-          skillsUsed: ["React", "JavaScript", "HTML/CSS", "Jest", "React Testing Library"]
-        }
-      ]
-    }
+          skillsUsed: [
+            "React",
+            "JavaScript",
+            "HTML/CSS",
+            "Jest",
+            "React Testing Library",
+          ],
+        },
+      ],
+    },
   ],
   projects: [
     {
       title: "Resume Analytics & Portfolio",
-      technologies: ["React 19", "Next.js 15", "TypeScript", "Vitest", "Cloud Run", "GitHub Actions"],
+      technologies: [
+        "React 19",
+        "Next.js 15",
+        "TypeScript",
+        "Vitest",
+        "Cloud Run",
+        "GitHub Actions",
+      ],
       bulletPoints: [
         "Architected a server-rendered portfolio and analytics dashboard utilizing the Next.js App Router for optimized performance and SEO.",
         "Engineered a custom NLP heuristics analyzer in TypeScript to parse and evaluate resume linguistic scannability, XYZ metric density, and ATS keyword matching.",
         "Implemented a secure cryptographic authentication gate using the Web Crypto API (SHA-256) and deployed the containerized application to Cloud Run via automated GitHub Actions pipelines.",
-        "Established robust continuous integration (CI) workflows via GitHub Actions, integrating ESLint and Vitest to enforce code quality and automate unit testing."
-      ]
+        "Established robust continuous integration (CI) workflows via GitHub Actions, integrating ESLint and Vitest to enforce code quality and automate unit testing.",
+      ],
     },
     {
       title: "Coda.sys (Terminal-Native Operating System)",
@@ -165,18 +217,35 @@ export const resumeData: ResumeData = {
       bulletPoints: [
         "Architected a fully automated CI/CD pipeline and local telemetry system to manage a structured SWE upskilling pivot.",
         "Developed a local Node.js/TypeScript Model Context Protocol (MCP) server, enabling AI agents to natively invoke local Python scripts and read sprint state securely.",
-        "Integrated GitHub Projects via GraphQL and Python CLI tools (`add_task.py`) for bi-directional sprint planning and task synchronization."
-      ]
+        "Integrated GitHub Projects via GraphQL and Python CLI tools (`add_task.py`) for bi-directional sprint planning and task synchronization.",
+      ],
     },
     {
       title: "Playlist Intersection for Spotify",
-      technologies: ["React", "Node.js", "Express.js", "Firestore", "Spotify API", "Cloud Run", "Google Cloud (GCP)", "Docker"],
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "Firestore",
+        "Spotify API",
+        "Cloud Run",
+        "Google Cloud (GCP)",
+        "Docker",
+      ],
       bulletPoints: [
         "Engineered a full-stack dashboard managing Spotify OAuth 2.0 authentication and stateful user sessions.",
-        "Developed an Express.js backend to handle asynchronous data fetching and compute intersections across multiple user \"Liked Songs\" libraries.",
-        "Containerized the service using Docker and deployed it to Google Cloud Run for scalable, serverless execution."
-      ]
-    }
+        'Developed an Express.js backend to handle asynchronous data fetching and compute intersections across multiple user "Liked Songs" libraries.',
+        "Containerized the service using Docker and deployed it to Google Cloud Run for scalable, serverless execution.",
+      ],
+    },
+    {
+      title: "trackvenn",
+      link: "https://venn.tools",
+      technologies: ["React", "Node.js", "Cloud Run", "OAuth 2.0"],
+      bulletPoints: [
+        "Engineered and deployed a cloud-native, decoupled full-stack application (React, Node.js) to Google Cloud Run, utilizing O(N+M) a Hash Set algorithm and secure OAuth 2.0 flows to compute the intersections of 10,000+ track Spotify libraries in real-time.",
+      ],
+    },
   ],
   education: {
     institution: "University of Houston",
@@ -190,8 +259,8 @@ export const resumeData: ResumeData = {
       "Software Engineering & Design",
       "Operating Systems",
       "Database Systems",
-      "Computer Architecture"
-    ]
+      "Computer Architecture",
+    ],
   },
-  interests: ["Bouldering", "Guitar", "Hiking", "Thriller", "Comedy"]
+  interests: ["Bouldering", "Guitar", "Hiking", "Thriller", "Comedy"],
 };
