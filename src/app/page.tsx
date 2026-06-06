@@ -27,11 +27,11 @@ export default function Home() {
           </section>
 
           {projects && projects.length > 0 && (
-            <section className="projects-container" style={{ display: 'flex', gap: '8px', marginBottom: '40px', alignItems: 'flex-start' }}>
-              <span className="skill-label">Project</span>
-              <div style={{ flex: 1 }}>
+            <section className="projects-container" style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
+              <span className="skill-label" style={{ width: 'auto' }}>Project</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {projects.filter(p => p.title === 'trackvenn').map((proj, idx) => (
-                  <div key={idx} className="project-card" style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', padding: '20px', borderRadius: '16px', transition: 'all 0.3s ease' }}>
+                  <div key={idx} className="project-card" style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', padding: '24px', borderRadius: '16px', transition: 'all 0.3s ease' }}>
                     <h4 style={{ fontSize: '1.1rem', marginBottom: '8px', fontWeight: 500 }}>
                       {proj.link ? (
                         <a href={proj.link} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>

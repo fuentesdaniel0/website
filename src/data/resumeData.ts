@@ -243,7 +243,7 @@ export const resumeData: ResumeData = {
       link: "https://venn.tools",
       technologies: ["React", "Node.js", "Cloud Run", "OAuth 2.0"],
       bulletPoints: [
-        "Engineered and deployed a cloud-native, decoupled full-stack application (React, Node.js) to Google Cloud Run, utilizing O(N+M) a Hash Set algorithm and secure OAuth 2.0 flows to compute the intersections of 10,000+ track Spotify libraries in real-time.",
+        "Engineered and deployed a cloud-native, decoupled full-stack application (React, Node.js) to Google Cloud Run, utilizing secure OAuth 2.0 flows to compute the intersections of 10,000+ track Spotify libraries in real-time.",
       ],
     },
   ],
