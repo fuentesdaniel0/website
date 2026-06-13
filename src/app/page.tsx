@@ -3,8 +3,26 @@ import { resumeData } from '../data/resumeData';
 export default function Home() {
   const { contact, skills, interests, projects } = resumeData;
 
+  const knowsAbout = skills.flatMap(group => group.items);
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: contact.name,
+    jobTitle: contact.title,
+    url: 'https://resume-app-849688752380.us-central1.run.app/',
+    sameAs: [
+      `https://${contact.linkedin}`,
+      `https://${contact.github}`,
+    ],
+    knowsAbout,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="ambient-glow" />
       <div className="page">
         <main className="glass-card">

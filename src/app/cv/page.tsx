@@ -5,13 +5,49 @@ import './cv.css';
 export const metadata = {
   title: 'CV - ' + resumeData.contact.name,
   description: 'Minimal Resume for ' + resumeData.contact.name,
+  openGraph: {
+    title: 'CV - ' + resumeData.contact.name,
+    description: 'Minimal Resume for ' + resumeData.contact.name,
+    url: 'https://resume-app-849688752380.us-central1.run.app/cv',
+    type: 'profile',
+    images: [
+      {
+        url: '/opengraph_preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Daniel Fuentes - CV / Resume',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CV - ' + resumeData.contact.name,
+    description: 'Minimal Resume for ' + resumeData.contact.name,
+    images: ['/opengraph_preview.png'],
+  },
 };
 
 export default function CVPage() {
   const { contact, skills, experience, projects, education } = resumeData;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: {
+      '@type': 'Person',
+      name: contact.name,
+      jobTitle: contact.title,
+      url: 'https://resume-app-849688752380.us-central1.run.app/',
+    },
+  };
+
   return (
-    <div className="cv-page">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="cv-page">
       <header className="cv-header">
         <h1>{contact.name}</h1>
         <h2>{contact.title}</h2>
@@ -103,5 +139,6 @@ export default function CVPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

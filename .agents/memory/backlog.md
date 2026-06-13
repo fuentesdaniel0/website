@@ -6,7 +6,7 @@ This file outlines the upcoming milestones, roadmap, and individual feature task
 
 ## Session Focus
 
-- [ ] Run SEO audits and reach optimization check to maximize search reach.
+- [x] Run SEO audits and reach optimization check to maximize search reach.
 
 ---
 
@@ -21,7 +21,7 @@ This file outlines the upcoming milestones, roadmap, and individual feature task
 *   [x] **Project Integrations**: Add the "epoch" project to resume data and display it alongside trackvenn. [Task 4]
 
 ### Milestone C: SEO Audits & Reach Optimization
-*   **SEO best practices check**: Perform automated schema validation, meta tags audit, and structured data optimization to maximize website reach. [Task 5]
+*   [x] **SEO best practices check**: Perform automated schema validation, meta tags audit, and structured data optimization to maximize website reach. [Task 5]
 
 ---
 
@@ -36,4 +36,4 @@ This file outlines the upcoming milestones, roadmap, and individual feature task
 - [x] **Task 4: Integrate "epoch" project** - Add the "epoch" project to `resumeData.ts` and update the home page to filter and render it similar to `trackvenn`.
 
 ### Milestone C Tasks
-- [ ] **Task 5: SEO and Metadata Validation Audits** - Audit site schema, structured data (JSON-LD), OpenGraph tags, and verify search index compatibility.
+- [x] **Task 5: SEO and Metadata Validation Audits** - Audit site schema, structured data (JSON-LD), OpenGraph tags, and verify search index compatibility.

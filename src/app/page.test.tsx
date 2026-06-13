@@ -26,4 +26,15 @@ describe('Home Page', () => {
     expect(screen.getByRole('link', { name: /trackvenn/i })).toHaveAttribute('href', 'https://venn.tools')
     expect(screen.getByRole('link', { name: /epoch/i })).toHaveAttribute('href', 'https://github.com/fuentesdaniel0/Epoch')
   })
+
+  it('renders the Person structured JSON-LD schema', () => {
+    const { container } = render(<Home />)
+    const script = container.querySelector('script[type="application/ld+json"]')
+    expect(script).toBeInTheDocument()
+    const json = JSON.parse(script?.textContent || '{}')
+    expect(json['@context']).toBe('https://schema.org')
+    expect(json['@type']).toBe('Person')
+    expect(json['name']).toBe('Daniel Fuentes')
+    expect(json['knowsAbout']).toContain('TypeScript / JS')
+  })
 })
