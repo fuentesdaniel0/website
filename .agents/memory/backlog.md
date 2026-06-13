@@ -6,7 +6,7 @@ This file outlines the upcoming milestones, roadmap, and individual feature task
 
 ## Session Focus
 
-- [x] Run SEO audits and reach optimization check to maximize search reach.
+- [ ] TBD
 
 ---
 
