@@ -246,6 +246,14 @@ export const resumeData: ResumeData = {
         "Engineered and deployed a cloud-native, decoupled full-stack application (React, Node.js) to Google Cloud Run, utilizing secure OAuth 2.0 flows to compute the intersections of 10,000+ track Spotify libraries in real-time.",
       ],
     },
+    {
+      title: "epoch",
+      link: "https://epoch.sh",
+      technologies: ["TypeScript", "Next.js", "Cloud Run", "TailwindCSS"],
+      bulletPoints: [
+        "Architected and deployed a containerized developer metrics visualizer that parses git history into interactive project timelines and milestone epochs.",
+      ],
+    },
   ],
   education: {
     institution: "University of Houston",

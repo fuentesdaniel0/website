@@ -19,4 +19,11 @@ describe('Home Page', () => {
     render(<Home />)
     expect(screen.getByText('Building')).toBeInTheDocument()
   })
+
+  it('renders the projects section with trackvenn and epoch', () => {
+    render(<Home />)
+    expect(screen.getByRole('heading', { level: 2, name: /projects/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /trackvenn/i })).toHaveAttribute('href', 'https://venn.tools')
+    expect(screen.getByRole('link', { name: /epoch/i })).toHaveAttribute('href', 'https://epoch.sh')
+  })
 })

@@ -19,8 +19,8 @@ export default function CVPage() {
           <span>{contact.email}</span> &bull; 
           <span>{contact.phone}</span> &bull; 
           <span>{contact.location}</span> &bull; 
-          <a href={`https://${contact.linkedin}`} target="_blank" rel="noreferrer">LinkedIn</a> &bull; 
-          <a href={`https://${contact.github}`} target="_blank" rel="noreferrer">GitHub</a>
+          <a id="cv-social-linkedin" href={`https://${contact.linkedin}`} target="_blank" rel="noreferrer">LinkedIn</a> &bull; 
+          <a id="cv-social-github" href={`https://${contact.github}`} target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </header>
 
@@ -70,7 +70,7 @@ export default function CVPage() {
               <div className="cv-project-header">
                 <strong>
                   {proj.link ? (
-                    <a href={proj.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                    <a id={`cv-project-link-${proj.title.toLowerCase()}`} href={proj.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
                       {proj.title}
                     </a>
                   ) : (

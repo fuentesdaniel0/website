@@ -111,3 +111,18 @@
     text-decoration: none;
   }
 }
+
+@media (max-width: 600px) {
+  .cv-page {
+    padding: 20px 16px;
+  }
+  .cv-job-header, .cv-project-header, .cv-edu-header, .cv-role-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .cv-role-dates, .cv-edu-dates {
+    float: none !important;
+    margin-top: 2px;
+  }
+}

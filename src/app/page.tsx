@@ -28,19 +28,19 @@ export default function Home() {
 
           {projects && projects.length > 0 && (
             <section className="projects-container" style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
-              <span className="skill-label" style={{ width: 'auto' }}>Project</span>
+              <h2 className="skill-label" style={{ width: 'auto', fontSize: '0.75rem', fontWeight: 'normal' }}>Projects</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                {projects.filter(p => p.title === 'trackvenn').map((proj, idx) => (
+                {projects.filter(p => p.title === 'trackvenn' || p.title === 'epoch').map((proj, idx) => (
                   <div key={idx} className="project-card" style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', padding: '24px', borderRadius: '16px', transition: 'all 0.3s ease' }}>
-                    <h4 style={{ fontSize: '1.1rem', marginBottom: '8px', fontWeight: 500 }}>
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: '8px', fontWeight: 500 }}>
                       {proj.link ? (
-                        <a href={proj.link} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                        <a id={`project-link-${proj.title.toLowerCase()}`} href={proj.link} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                           {proj.title}
                         </a>
                       ) : (
                         <span style={{ color: 'var(--text-primary)' }}>{proj.title}</span>
                       )}
-                    </h4>
+                    </h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '16px', lineHeight: '1.6' }}>
                       {proj.bulletPoints[0]}
                     </p>
@@ -72,6 +72,7 @@ export default function Home() {
             
             <div className="links">
               <a
+                id="social-linkedin"
                 href={`https://${contact.linkedin}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,6 +87,7 @@ export default function Home() {
               </a>
 
               <a
+                id="social-github"
                 href={`https://${contact.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
