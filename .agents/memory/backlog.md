@@ -6,7 +6,7 @@ This file outlines the upcoming milestones, roadmap, and individual feature task
 
 ## Session Focus
 
-- [ ] TBD
+- [ ] Task 6: Extend resumeData structure and content to support certifications.
 
 ---
 
@@ -23,6 +23,9 @@ This file outlines the upcoming milestones, roadmap, and individual feature task
 ### Milestone C: SEO Audits & Reach Optimization
 *   [x] **SEO best practices check**: Perform automated schema validation, meta tags audit, and structured data optimization to maximize website reach. [Task 5]
 
+### Milestone D: Skimmable Role History, Education & Certifications
+*   [ ] **Card-based CV details**: Render career roles history, education, and certifications in compact, interactive cards to make the homepage an easy-to-skim summary of the CV. [Task 6]
+
 ---
 
 ## Active Backlog Tasks
@@ -37,3 +40,9 @@ This file outlines the upcoming milestones, roadmap, and individual feature task
 
 ### Milestone C Tasks
 - [x] **Task 5: SEO and Metadata Validation Audits** - Audit site schema, structured data (JSON-LD), OpenGraph tags, and verify search index compatibility.
+
+### Milestone D Tasks
+- [ ] **Task 6: Extend resumeData structure and content** - Add Certifications interface and certifications array (with Google Cloud certifications) to `resumeData.ts`.
+- [ ] **Task 7: Create compact card components for role history, education, and certifications** - Build responsive UI cards in `page.tsx` for experience roles, education, and certifications.
+- [ ] **Task 8: Implement interactive styling and transitions** - Add clean CSS rules for compact layouts, smooth transitions, and hover animations in `globals.css`.
+- [ ] **Task 9: Unit verification tests** - Add test cases to `page.test.tsx` verifying card content rendering.
