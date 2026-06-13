@@ -24,6 +24,6 @@ describe('Home Page', () => {
     render(<Home />)
     expect(screen.getByRole('heading', { level: 2, name: /projects/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /trackvenn/i })).toHaveAttribute('href', 'https://venn.tools')
-    expect(screen.getByRole('link', { name: /epoch/i })).toHaveAttribute('href', 'https://epoch.sh')
+    expect(screen.getByRole('link', { name: /epoch/i })).toHaveAttribute('href', 'https://github.com/fuentesdaniel0/Epoch')
   })
 })

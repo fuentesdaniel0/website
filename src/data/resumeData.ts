@@ -248,10 +248,10 @@ export const resumeData: ResumeData = {
     },
     {
       title: "epoch",
-      link: "https://epoch.sh",
-      technologies: ["TypeScript", "Next.js", "Cloud Run", "TailwindCSS"],
+      link: "https://github.com/fuentesdaniel0/Epoch",
+      technologies: ["Python", "Bash", "Git", "Vertex AI"],
       bulletPoints: [
-        "Architected and deployed a containerized developer metrics visualizer that parses git history into interactive project timelines and milestone epochs.",
+        "Designed and built a drop-in, version-controlled memory protocol and CLI toolchain (Python, Bash) that enables AI coding assistants to maintain persistent architecture maps, roadmap backlogs, and state checkpoints across sessions.",
       ],
     },
   ],
